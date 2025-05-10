@@ -43,6 +43,7 @@ def main():
     parser.add_argument("-o", "--output", required=False, help="Archivo o directorio de salida")
     parser.add_argument("-m", "--model", default="isnet-anime", help="Modelo a utilizar (por defecto: isnet-anime)")
     parser.add_argument("--debug", action="store_true", help="Imprime los archivos y no procesa nada")
+    parser.add_argument("--delete", action="store_true", help="Eliminar los archivos encontrados en vez de procesarlos")
 
     args = parser.parse_args()
 
@@ -62,6 +63,23 @@ def main():
     if not input_files:
         print("[WARN] No se encontraron archivos que coincidan.")
         exit(0)
+
+    if args.delete:
+        print(f"[INFO] Se encontraron {len(input_files)} archivo(s) para eliminar.")
+        for f in input_files:
+            print(" -", f)
+        confirm = input("[CONFIRMAR] ¿Deseas borrar estos archivos? (s/n): ")
+        if confirm.lower() == "s":
+            for f in input_files:
+                try:
+                    os.remove(f)
+                    print(f"[BORRADO] {f}")
+                except Exception as e:
+                    print(f"[ERROR] No se pudo borrar {f}: {e}")
+            print("[INFO] Archivos eliminados.")
+        else:
+            print("[INFO] Operación cancelada por el usuario.")
+        return
 
     print(f"[INFO] Se encontraron {len(input_files)} archivo(s).")
 
