@@ -68,8 +68,8 @@ def main():
         print(f"[INFO] Se encontraron {len(input_files)} archivo(s) para eliminar.")
         for f in input_files:
             print(" -", f)
-        confirm = input("[CONFIRMAR] ¿Deseas borrar estos archivos? (s/n): ")
-        if confirm.lower() == "s":
+        confirm = input("[CONFIRMAR] ¿Deseas borrar estos archivos? (s/n | y/n): ")
+        if confirm.lower() in ["s", "y"]:
             for f in input_files:
                 try:
                     os.remove(f)
