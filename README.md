@@ -21,7 +21,7 @@ python3 removebgcli.py --find "-type f -newermt \"$today\"" --find-path /ruta/a/
 ```bash
 python3 removebgcli.py --find "-type f -mmin -19" --find-path /ruta/a/buscar -o /ruta/a/buscar
 ```
-### 
+### 5.  
 
 ```bash
 fecha_inicio="2024-12-01"
@@ -32,6 +32,7 @@ uv run removebgcli.py \
   --find-path /ruta/a/buscar \
   --debug
 ```
+
 ### Ejemplo específico para Termux y carpeta Telegram:
 ```bash
 python3 removebgcli.py --find "-type f -mmin -15" --find-path /data/data/com.termux/files/home/storage/shared/Pictures/Telegram/ --debug
