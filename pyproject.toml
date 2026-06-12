@@ -1,0 +1,12 @@
+[project]
+name = "removebg"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy<2.0",
+    "onnxruntime>=1.23.0",
+    "pillow>=11.3.0",
+    "rembg>=2.0.67",
+]
