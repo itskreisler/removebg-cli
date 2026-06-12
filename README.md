@@ -89,6 +89,14 @@ uv run removebgcli.py --find "-type f -newermt \"$today\"" --find-path /data/dat
 uv run removebgcli.py --find "-type f -mmin -19" --find-path /data/data/com.termux/files/home/storage/shared/Pictures/Telegram/ -o /data/data/com.termux/files/home/storage/shared/Pictures/Telegram/
 ```
 
+### Ejemplos específicos para Termux (carpeta Facebook/DCIM)
+
+**Buscar imágenes creadas hoy (debug):**
+```bash
+today=$(date +%Y-%m-%d)
+uv run removebgcli.py --find "-type f -newermt \"$today\"" --find-path /data/data/com.termux/files/home/storage/shared/DCIM/Facebook/ --debug
+```
+
 ## Modelos disponibles
 
 El script soporta los siguientes modelos de rembg (usar con `-m` o `--model`):
