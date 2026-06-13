@@ -42,7 +42,8 @@ def main():
   uv run removebgcli.py --find "-type f -mmin -15" --find-path . --debug
   uv run removebgcli.py -i "*.jpg" -o ./sin_fondo
   uv run removebgcli.py --find "-type f -newermt \\"2024-01-01\\"" --find-path /ruta -o /ruta/salida -m u2net
-  uv run removebgcli.py --find "-type f -mmin -19" --find-path /ruta --delete"""
+  uv run removebgcli.py --find "-type f -mmin -19" --find-path /ruta --delete
+  uv run removebgcli.py --find "-type f -newermt \\"$(date +%Y-%m-%d)\\"" --find-path /ruta -o /ruta"""
     )
 
     parser.add_argument("--version", action="version", version="%(prog)s 0.1.0")
